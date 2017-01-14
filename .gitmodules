@@ -1,0 +1,15 @@
+[submodule "jtransc"]
+	path = jtransc
+	url = git@github.com:jtransc/jtransc.git
+[submodule "korio"]
+	path = korio
+	url = git@github.com:soywiz/korio.git
+[submodule "korim"]
+	path = korim
+	url = git@github.com:soywiz/korim.git
+[submodule "korui"]
+	path = korui
+	url = git@github.com:soywiz/korui.git
+[submodule "korte"]
+	path = korte
+	url = git@github.com:soywiz/korte.git
