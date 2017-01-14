@@ -13,9 +13,6 @@
 [submodule "korte"]
 	path = korte
 	url = git@github.com:soywiz/korte.git
-[submodule "korag"]
-	path = korag
-	url = git@github.com:soywiz/korag.git
 [submodule "korau"]
 	path = korau
 	url = git@github.com:soywiz/korau.git
