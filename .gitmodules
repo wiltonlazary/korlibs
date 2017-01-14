@@ -16,3 +16,6 @@
 [submodule "korau"]
 	path = korau
 	url = git@github.com:soywiz/korau.git
+[submodule "korag"]
+	path = korag
+	url = git@github.com:soywiz/korag.git
