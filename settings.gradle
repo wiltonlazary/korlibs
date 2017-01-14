@@ -1,0 +1,10 @@
+rootProject.name = 'kor-root'
+
+include(
+        'korio',
+        'korte',
+		'korim',
+		'korui',
+		'korag',
+		'korau',
+)

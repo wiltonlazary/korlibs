@@ -1,21 +1,28 @@
 [submodule "jtransc"]
 	path = jtransc
 	url = git@github.com:jtransc/jtransc.git
+    branch = master
 [submodule "korio"]
 	path = korio
 	url = git@github.com:soywiz/korio.git
+    branch = master
 [submodule "korim"]
 	path = korim
 	url = git@github.com:soywiz/korim.git
+    branch = master
 [submodule "korui"]
 	path = korui
 	url = git@github.com:soywiz/korui.git
+    branch = master
 [submodule "korte"]
 	path = korte
 	url = git@github.com:soywiz/korte.git
+    branch = master
 [submodule "korau"]
 	path = korau
 	url = git@github.com:soywiz/korau.git
+    branch = master
 [submodule "korag"]
 	path = korag
 	url = git@github.com:soywiz/korag.git
+    branch = master
