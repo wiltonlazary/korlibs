@@ -1,5 +1,6 @@
 rootProject.name = 'kor-root'
 
+/*
 include(
         'korio',
         'korte',
@@ -8,3 +9,4 @@ include(
 		'korag',
 		'korau',
 )
+*/

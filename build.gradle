@@ -1,0 +1,62 @@
+def sed = { String file, /* language=RegExp */ String regexp, String replacement ->
+	def f = new File(file)
+	def content = f.getText("UTF-8")
+	def res = content.replaceAll(regexp, replacement)
+	//println(res)
+	f.write(res)
+}
+
+def fixPropertiesFile = { String file ->
+	println("Updating $file")
+	sed(file, '(kor\\w\\wVersion)=(.*)', "\$1=$korVersion")
+	sed(file, '(jtranscVersion)=(.*)', "\$1=$jtranscVersion")
+	sed(file, '(kotlinVersion)=(.*)', "\$1=$kotlinVersion")
+}
+
+task updateVersion() {
+	doLast {
+		println "Updating to version kor=$korVersion, jtransc=$jtranscVersion, kotlin=$kotlinVersion"
+		
+		fixPropertiesFile('korio/gradle.properties')
+		fixPropertiesFile('korte/gradle.properties')
+		fixPropertiesFile('korim/gradle.properties')
+		fixPropertiesFile('korag/gradle.properties')
+		fixPropertiesFile('korau/gradle.properties')
+		fixPropertiesFile('korui/gradle.properties')
+		fixPropertiesFile('korui/korui-android-example/gradle.properties')
+	}
+}
+
+task deployKorio(type: GradleBuild) {
+	buildFile = 'korio/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorte(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korte/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorim(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korim/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorag(type: GradleBuild, dependsOn: [deployKorio, deployKorim]) {
+	buildFile = 'korag/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorau(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korau/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau]) {
+	buildFile = 'korui/build.gradle'
+	tasks = ['deploy']
+}
+
+task deploy(dependsOn: [deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui]) {
+
+}
