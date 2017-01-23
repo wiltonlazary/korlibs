@@ -9,6 +9,7 @@ def sed = { String file, /* language=RegExp */ String regexp, String replacement
 def fixPropertiesFile = { String file ->
 	println("Updating $file")
 	sed(file, '(kor\\w\\wVersion)=(.*)', "\$1=$korVersion")
+	sed(file, '(korVersion)=(.*)', "\$1=$korVersion")
 	sed(file, '(jtranscVersion)=(.*)', "\$1=$jtranscVersion")
 	sed(file, '(kotlinVersion)=(.*)', "\$1=$kotlinVersion")
 }
@@ -58,5 +59,41 @@ task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deploy
 }
 
 task deploy(dependsOn: [deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui]) {
+
+}
+
+////////////////////////////////////////////////////
+
+task installKorio(type: GradleBuild) {
+	buildFile = 'korio/build.gradle'
+	tasks = ['install']
+}
+
+task installKorte(type: GradleBuild, dependsOn: installKorio) {
+	buildFile = 'korte/build.gradle'
+	tasks = ['install']
+}
+
+task installKorim(type: GradleBuild, dependsOn: installKorio) {
+	buildFile = 'korim/build.gradle'
+	tasks = ['install']
+}
+
+task installKorag(type: GradleBuild, dependsOn: [installKorio, installKorim]) {
+	buildFile = 'korag/build.gradle'
+	tasks = ['install']
+}
+
+task installKorau(type: GradleBuild, dependsOn: installKorio) {
+	buildFile = 'korau/build.gradle'
+	tasks = ['install']
+}
+
+task installKorui(type: GradleBuild, dependsOn: [installKorim, installKorag, installKorau]) {
+	buildFile = 'korui/build.gradle'
+	tasks = ['install']
+}
+
+task install(dependsOn: [installKorio, installKorte, installKorim, installKorag, installKorau, installKorui]) {
 
 }
