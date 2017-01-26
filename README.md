@@ -70,10 +70,3 @@ Game Engine using korau, korag and korau
 
 Intended for **frontend**.
 
-## [korfl - FLash](http://github.com/soywiz/korfl)
-
-[![](/logos/128/korfl.png)](http://github.com/soywiz/korfl)
-
-Load swf Adobe Flash/Animate animations and use them with korge
-
-Intended for **frontend**.

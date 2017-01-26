@@ -29,3 +29,6 @@
 [submodule "kor_samples"]
 	path = kor_samples
 	url = git@github.com:soywiz/kor_samples.git
+[submodule "korge"]
+	path = korge
+	url = git@github.com:soywiz/korge.git

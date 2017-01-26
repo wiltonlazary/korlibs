@@ -24,7 +24,10 @@ task updateVersion() {
 		fixPropertiesFile('korag/gradle.properties')
 		fixPropertiesFile('korau/gradle.properties')
 		fixPropertiesFile('korui/gradle.properties')
+		fixPropertiesFile('korge/gradle.properties')
 		fixPropertiesFile('korui/korui-android-example/gradle.properties')
+
+		sed('korge/korge/src/com/soywiz/korge/Korge.kt', 'val VERSION = "(.*)"', 'val VERSION = "' + korVersion + '"')
 	}
 }
 
@@ -53,12 +56,17 @@ task deployKorau(type: GradleBuild, dependsOn: deployKorio) {
 	tasks = ['deploy']
 }
 
-task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau]) {
+task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte]) {
 	buildFile = 'korui/build.gradle'
 	tasks = ['deploy']
 }
 
-task deploy(dependsOn: [deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui]) {
+task deployKorge(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte, deployKorui]) {
+	buildFile = 'korge/build.gradle'
+	tasks = ['deploy']
+}
+
+task deploy(dependsOn: [deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui, deployKorge]) {
 
 }
 
@@ -89,11 +97,16 @@ task installKorau(type: GradleBuild, dependsOn: installKorio) {
 	tasks = ['install']
 }
 
-task installKorui(type: GradleBuild, dependsOn: [installKorim, installKorag, installKorau]) {
+task installKorui(type: GradleBuild, dependsOn: [installKorim, installKorag, installKorau, installKorte]) {
 	buildFile = 'korui/build.gradle'
 	tasks = ['install']
 }
 
-task install(dependsOn: [installKorio, installKorte, installKorim, installKorag, installKorau, installKorui]) {
+task installKorge(type: GradleBuild, dependsOn: [installKorim, installKorag, installKorau, installKorte, installKorui]) {
+	buildFile = 'korge/build.gradle'
+	tasks = ['install']
+}
+
+task install(dependsOn: [installKorio, installKorte, installKorim, installKorag, installKorau, installKorui, installKorge]) {
 
 }
