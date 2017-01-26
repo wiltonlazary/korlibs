@@ -3,6 +3,10 @@
 For desktop JVM, Android and JTransc Node.JS + Browser.
 More targets to come including Kotlin.js, iOS...
 
+[![](https://raw.githubusercontent.com/soywiz/kor/master/patreon/patreon.png)](https://www.patreon.com/soywiz)
+
+[https://www.patreon.com/soywiz](https://www.patreon.com/soywiz)
+
 ## [JTransc](http://github.com/jtransc/jtransc)
 
 [![](/logos/128/jtransc.png)](http://github.com/jtransc/jtransc)
