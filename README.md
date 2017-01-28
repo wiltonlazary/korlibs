@@ -20,7 +20,7 @@ KOR* is designed to work with jtransc.
 
 [![](/logos/128/korio.png)](http://github.com/soywiz/korio)
 
-Event Loop + Asynchronous I/O + Network + VFS + Utilities + Serialization + vertx integration.
+Event Loop + Asynchronous I/O + Network + WebSockets + VFS + Utilities + Serialization + vertx integration.
 This is the core library all other KOR* libraries use.
 
 Intended for **backend** and **frontend**.
