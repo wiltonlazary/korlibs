@@ -65,45 +65,6 @@ task updateVersion() {
 	}
 }
 
-task deployKorio(type: GradleBuild) {
-	buildFile = 'korio/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorte(type: GradleBuild, dependsOn: deployKorio) {
-	buildFile = 'korte/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorim(type: GradleBuild, dependsOn: deployKorio) {
-	buildFile = 'korim/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorag(type: GradleBuild, dependsOn: [deployKorio, deployKorim]) {
-	buildFile = 'korag/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorau(type: GradleBuild, dependsOn: deployKorio) {
-	buildFile = 'korau/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte]) {
-	buildFile = 'korui/build.gradle'
-	tasks = ['deploy']
-}
-
-task deployKorge(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte, deployKorui]) {
-	buildFile = 'korge/build.gradle'
-	tasks = ['deploy']
-}
-
-task deploy(dependsOn: [deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui, deployKorge]) {
-
-}
-
 ////////////////////////////////////////////////////
 
 task installKorio(type: GradleBuild) {
@@ -142,5 +103,46 @@ task installKorge(type: GradleBuild, dependsOn: [installKorim, installKorag, ins
 }
 
 task install(dependsOn: [installKorio, installKorte, installKorim, installKorag, installKorau, installKorui, installKorge]) {
+
+}
+
+//////////////////////////////////////////
+
+task deployKorio(type: GradleBuild) {
+	buildFile = 'korio/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorte(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korte/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorim(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korim/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorag(type: GradleBuild, dependsOn: [deployKorio, deployKorim]) {
+	buildFile = 'korag/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorau(type: GradleBuild, dependsOn: deployKorio) {
+	buildFile = 'korau/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorui(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte]) {
+	buildFile = 'korui/build.gradle'
+	tasks = ['deploy']
+}
+
+task deployKorge(type: GradleBuild, dependsOn: [deployKorim, deployKorag, deployKorau, deployKorte, deployKorui]) {
+	buildFile = 'korge/build.gradle'
+	tasks = ['deploy']
+}
+
+task deploy(dependsOn: [install, deployKorio, deployKorte, deployKorim, deployKorag, deployKorau, deployKorui, deployKorge]) {
 
 }
