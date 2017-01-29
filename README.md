@@ -1,9 +1,15 @@
-# Kotlin cORoutines - libraries
+# Kotlin cORoutines LIBraries
 
-For desktop JVM, Android and JTransc Node.JS + Browser.
+**NOTE:** To avoid naming mistakes with Kotlin's **ktor** web backend framework [https://github.com/kotlin/ktor](https://github.com/kotlin/ktor),
+you can call the set of these libraries Soywiz's **KORLIBS** (I named this repo according).
+Individually there should be no possible naming mistakes.
+
+These libraries work for desktop JVM, Android and JTransc Node.JS + Browser.
 More targets to come including Kotlin.js, iOS...
 
 [![](https://raw.githubusercontent.com/soywiz/kor/master/patreon/patreon.png)](https://www.patreon.com/soywiz)
+
+If you are interested in these projects, please support my work at patreon so I can continue working on them!
 
 [https://www.patreon.com/soywiz](https://www.patreon.com/soywiz)
 
@@ -12,16 +18,16 @@ More targets to come including Kotlin.js, iOS...
 [![](/logos/128/jtransc.png)](http://github.com/jtransc/jtransc)
 
 Convert your kotlin code to several platforms and languages.
-KOR* is designed to work with jtransc.
+KORLIBS are designed to work with jtransc.
 
-**Note:** KOR* will also work with direct Kotlin targets including Kotlin-JS, and Kotlin-Native if it ends being available.
+**Note:** Soywiz's KORLIBS will also work with direct Kotlin targets including Kotlin-JS, and Kotlin-Native if it ends being available.
 
 ## [korio - I/O](http://github.com/soywiz/korio)
 
 [![](/logos/128/korio.png)](http://github.com/soywiz/korio)
 
 Event Loop + Asynchronous I/O + Network + WebSockets + VFS + Utilities + Serialization + vertx integration.
-This is the core library all other KOR* libraries use.
+This is the core library all other Soywiz's KORLIBS libraries use.
 
 Intended for **backend** and **frontend**.
 
@@ -56,7 +62,7 @@ Intended for **backend** + **frontend**.
 [![](/logos/128/korag.png)](http://github.com/soywiz/korag)
 
 Fast and testeable GPU graphics and portable shaders for all frontend modern targets.
-Compatible with GL|ES, webgl. Future-proof: Designed to work with any modern architecture in the future like DirectX, Vulkan, Metal or whatever
+Compatible with GL|ES, WebGL. Future-proof: Designed to work with any modern architecture in the future like DirectX, Vulkan, Metal or whatever
 without changing any code at all.
 
 Intended for **frontend**.

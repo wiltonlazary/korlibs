@@ -1,12 +1,38 @@
 rootProject.name = 'kor-root'
 
-/*
-include(
-        'korio',
-        'korte',
-		'korim',
-		'korui',
-		'korag',
-		'korau',
-)
-*/
+def includeProj(name, folder) {
+    include name
+    project(name).projectDir = file(folder)
+}
+
+includeProj(":korio", "korio/korio")
+includeProj(":korio-android", "korio/korio-android")
+includeProj(":korio-core", "korio/korio-core")
+includeProj(":korio-jtransc-example", "korio/korio-jtransc-example")
+includeProj(":korio-vertx", "korio/korio-vertx")
+
+includeProj(":korte", "korte/korte")
+includeProj(":korte-jekyll", "korte/korte-jekyll")
+includeProj(":korte-vertx", "korte/korte-vertx")
+
+includeProj(":korui", "korui/korui")
+includeProj(":korui-android", "korui/korui-android")
+includeProj(":korui-core", "korui/korui-core")
+includeProj(":korui-jtransc-example", "korui/korui-jtransc-example")
+
+includeProj(":korim", "korim/korim")
+includeProj(":korim-android", "korim/korim-android")
+includeProj(":korim-core", "korim/korim-core")
+
+includeProj(":korge", "korge/korge")
+includeProj(":korge-android", "korge/korge-android")
+includeProj(":korge-core", "korge/korge-core")
+includeProj(":korge-samples", "korge/korge-samples")
+
+includeProj(":korau", "korau/korau")
+includeProj(":korau-android", "korau/korau-android")
+includeProj(":korau-core", "korau/korau-core")
+
+includeProj(":korag", "korag/korag")
+includeProj(":korag-android", "korag/korag-android")
+includeProj(":korag-core", "korag/korag-core")

@@ -1,3 +1,36 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+		jcenter()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+		//classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+		classpath 'com.android.tools.build:gradle:2.2.3'
+	}
+}
+
+configurations {
+	provided
+}
+
+allprojects {
+	configurations {
+		provided
+	}
+
+	repositories {
+		mavenLocal()
+		jcenter()
+		maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+		mavenCentral()
+	}
+}
+
 def sed = { String file, /* language=RegExp */ String regexp, String replacement ->
 	def f = new File(file)
 	def content = f.getText("UTF-8")
@@ -12,6 +45,7 @@ def fixPropertiesFile = { String file ->
 	sed(file, '(korVersion)=(.*)', "\$1=$korVersion")
 	sed(file, '(jtranscVersion)=(.*)', "\$1=$jtranscVersion")
 	sed(file, '(kotlinVersion)=(.*)', "\$1=$kotlinVersion")
+	sed(file, '(vertxVersion)=(.*)', "\$1=$vertxVersion")
 }
 
 task updateVersion() {
