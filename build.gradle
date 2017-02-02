@@ -61,7 +61,7 @@ task updateVersion() {
 		fixPropertiesFile('korge/gradle.properties')
 		fixPropertiesFile('korui/korui-android-example/gradle.properties')
 
-		sed('korge/korge/src/com/soywiz/korge/Korge.kt', 'val VERSION = "(.*)"', 'val VERSION = "' + korVersion + '"')
+		sed('korge/korge-core/src/com/soywiz/korge/Korge.kt', 'val VERSION = "(.*)"', 'val VERSION = "' + korVersion + '"')
 	}
 }
 
