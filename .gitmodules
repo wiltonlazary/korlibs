@@ -32,3 +32,6 @@
 [submodule "korge"]
 	path = korge
 	url = git@github.com:soywiz/korge.git
+[submodule "korge-kingdom"]
+	path = korge-kingdom
+	url = git@github.com:soywiz/korge-kingdom.git
